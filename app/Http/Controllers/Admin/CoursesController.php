@@ -44,9 +44,11 @@ class CoursesController extends Controller
      */
     public function create()
     {
+/*
         if (! Gate::allows('course_create')) {
             return abort(401);
         }
+*/
         $teachers = \App\User::whereHas('role', function ($q) { $q->where('role_id', 2); } )->get()->pluck('name', 'id');
 
         return view('admin.courses.create', compact('teachers'));

@@ -56,13 +56,10 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
                             <li>
+                                <a href="{{ route("courses.create") }}">Create a Course!</a>
+                            </li>
+                            <li>
                                 <a href="#">About</a>
-                            </li>
-                            <li>
-                                <a href="#">Services</a>
-                            </li>
-                            <li>
-                                <a href="#">Contact</a>
                             </li>
                         </ul>
                     </div>
@@ -84,6 +81,7 @@
                             <input type="password" name="password" placeholder="Password" />
                             <input type="submit" value="Login" class="btn btn-info">
                         </form>
+                        <input type="submit" value="Register" class="btn btn-info" onclick="window.location='{{ route("auth.register") }}'">
                     @endif
                 </div>
             </div>

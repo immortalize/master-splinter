@@ -4,6 +4,9 @@ Route::get('course/{slug}', ['uses' => 'CoursesController@show', 'as' => 'course
 Route::post('course/payment', ['uses' => 'CoursesController@payment', 'as' => 'courses.payment']);
 Route::post('course/{course_id}/rating', ['uses' => 'CoursesController@rating', 'as' => 'courses.rating']);
 
+/* regular teachers */
+Route::resource('courses', 'CoursesController');
+
 Route::get('lesson/{course_id}/{slug}', ['uses' => 'LessonsController@show', 'as' => 'lessons.show']);
 Route::post('lesson/{slug}/test', ['uses' => 'LessonsController@test', 'as' => 'lessons.test']);
 

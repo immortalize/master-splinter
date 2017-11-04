@@ -40,6 +40,7 @@ class UsersController extends Controller
         }
         $roles = \App\Role::get()->pluck('title', 'id');
 
+
         return view('admin.users.create', compact('roles'));
     }
 

@@ -83,7 +83,16 @@ class RegisterController extends Controller
 
         event(new Registered($user = $this->create($request->all())));
 
-        $user->role()->sync([3]);
+        /*
+         *  default user roles defined here:
+         *
+         * 1: admin
+         * 2: teacher
+         * 3: student
+         *
+         * */
+
+        $user->role()->sync([2,3]);
 
         $this->guard()->login($user);
 

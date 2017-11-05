@@ -75,11 +75,11 @@ class CoursesController extends Controller
      */
     public function create()
     {
-        /*
+
                 if (! Gate::allows('course_create')) {
                     return abort(401);
                 }
-        */
+
         $teachers = \App\User::whereHas('role', function ($q) { $q->where('role_id', 2); } )->get()->pluck('name', 'id');
 
         return view('courses.create', compact('teachers'));
@@ -102,6 +102,18 @@ class CoursesController extends Controller
         $course->teachers()->sync($teachers);
 
         return redirect()->route('courses.index');
+    }
+
+    /**
+     * Display a listing of Course.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+       $courses = Course::ofTeacher()->get();
+
+        return view('courses.index', compact('courses'));
     }
 
 }

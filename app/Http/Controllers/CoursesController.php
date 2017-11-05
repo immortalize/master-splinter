@@ -97,6 +97,9 @@ class CoursesController extends Controller
             return abort(401);
         }
         $request = $this->saveFiles($request);
+        // add slug
+        $request['slug'] = str_slug($request['title'], '-');
+
         $course = Course::create($request->all());
         $teachers = \Auth::user()->isAdmin() ? array_filter((array)$request->input('teachers')) : [\Auth::user()->id];
         $course->teachers()->sync($teachers);

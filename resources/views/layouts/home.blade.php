@@ -18,7 +18,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>{{ $page_title or 'Splinter' }}</title>
+    <title>@lang('global.global_title')</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -50,16 +50,16 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="/">Master Splinter</a>
+                        <a class="navbar-brand" href="/">@lang('global.global_title')</a>
                     </div>
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
                             <li>
-                                <a href="{{ route("courses.create") }}">Create a Course!</a>
+                                <a href="{{ route("courses.create") }}">@lang('global.navbar.create_course')</a>
                             </li>
                             <li>
-                                <a href="#">About</a>
+                                <a href="#">@lang('global.navbar.about')</a>
                             </li>
                         </ul>
                     </div>
@@ -68,20 +68,20 @@
                 <div class="col-lg-6 text-right" style="padding-top: 10px">
                     @if (Auth::check())
                         <div style="color:white">
-                            Logged in as {{ Auth::user()->email }}
-                            <form action="{{ route('auth.logout') }}" method="post">
+                            {{ Auth::user()->email }}
+                            <form style="display: inline" action="{{ route('auth.logout') }}" method="post">
                                 {{ csrf_field() }}
-                                <input type="submit" value="Logout" class="btn btn-info">
+                                <input type="submit" value="@lang('global.app_logout')" class="btn btn-info">
                             </form>
                         </div>
                     @else
-                        <form action="{{ route('auth.login') }}" method="post">
+                        <form style="display: inline" action="{{ route('auth.login') }}" method="post">
                             {{ csrf_field() }}
-                            <input type="email" name="email" placeholder="Email" />
-                            <input type="password" name="password" placeholder="Password" />
-                            <input type="submit" value="Login" class="btn btn-info">
-                            <input type="submit" value="Register" class="btn btn-info" onclick="window.location='{{ route("auth.register") }}'">
+                            <input type="email" name="email" placeholder="@lang('global.users.fields.email')" />
+                            <input type="password" name="password" placeholder="@lang('global.users.fields.password')" />
+                            <input type="submit" value="@lang('global.users.login')" class="btn btn-info">
                         </form>
+                        <input type="submit" name="button" value="@lang('global.users.register')" class="btn btn-info" onclick="window.location='{{ route("auth.register") }}'">
                     @endif
                 </div>
             </div>
@@ -123,7 +123,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Master Splinter</p>
+                    <p>@lang('global.copyright') &copy; @lang('global.global_title')</p>
                 </div>
             </div>
         </footer>

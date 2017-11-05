@@ -3,7 +3,7 @@
 @section('main')
 
     @if (!is_null($purchased_courses))
-        <h3>My courses</h3>
+        <h3>@lang('global.courses.my_courses')</h3>
         <div class="row">
 
         @foreach($purchased_courses as $course)
@@ -27,7 +27,7 @@
 
     @endif
 
-    <h3>All courses</h3>
+    <h3>@lang('global.courses.all_courses')</h3>
     <div class="row">
     @foreach($courses as $course)
         <div class="col-sm-4 col-lg-4 col-md-4">

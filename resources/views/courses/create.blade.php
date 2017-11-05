@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.home')
 
-@section('content')
+@section('main')
     <h3 class="page-title">@lang('global.courses.title')</h3>
     {!! Form::open(['method' => 'POST', 'route' => ['courses.store'], 'files' => true,]) !!}
 
@@ -10,20 +10,6 @@
         </div>
         
         <div class="panel-body">
-<!--            @if (Auth::user()->isAdmin())-->
-            <div class="row">
-                <div class="col-xs-12 form-group">
-                    {!! Form::label('teachers', 'Teachers', ['class' => 'control-label']) !!}
-                    {!! Form::select('teachers[]', $teachers, old('teachers'), ['class' => 'form-control select2', 'multiple' => 'multiple']) !!}
-                    <p class="help-block"></p>
-                    @if($errors->has('teachers'))
-                        <p class="help-block">
-                            {{ $errors->first('teachers') }}
-                        </p>
-                    @endif
-                </div>
-            </div>
-<!--            @endif-->
             <div class="row">
                 <div class="col-xs-12 form-group">
                     {!! Form::label('title', 'Title*', ['class' => 'control-label']) !!}
@@ -36,18 +22,18 @@
                     @endif
                 </div>
             </div>
-            <div class="row">
-                <div class="col-xs-12 form-group">
-                    {!! Form::label('slug', 'Slug', ['class' => 'control-label']) !!}
-                    {!! Form::text('slug', old('slug'), ['class' => 'form-control', 'placeholder' => '']) !!}
-                    <p class="help-block"></p>
-                    @if($errors->has('slug'))
-                        <p class="help-block">
-                            {{ $errors->first('slug') }}
-                        </p>
-                    @endif
-                </div>
-            </div>
+<!--            <div class="row">-->
+<!--                <div class="col-xs-12 form-group">-->
+<!--                    {!! Form::label('slug', 'Slug', ['class' => 'control-label']) !!}-->
+<!--                    {!! Form::text('slug', old('slug'), ['class' => 'form-control', 'placeholder' => '']) !!}-->
+<!--                    <p class="help-block"></p>-->
+<!--                    @if($errors->has('slug'))-->
+<!--                        <p class="help-block">-->
+<!--                            {{ $errors->first('slug') }}-->
+<!--                        </p>-->
+<!--                    @endif-->
+<!--                </div>-->
+<!--            </div>-->
             <div class="row">
                 <div class="col-xs-12 form-group">
                     {!! Form::label('description', 'Description', ['class' => 'control-label']) !!}

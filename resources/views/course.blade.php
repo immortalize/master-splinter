@@ -31,7 +31,8 @@
             <form action="{{ route('courses.payment') }}" method="POST">
                 <input type="hidden" name="course_id" value="{{ $course->id }}" />
                 <input type="hidden" name="amount" value="{{ $course->price * 100 }}" />
-                <script
+                <input type="submit" value="@lang('global.courses.attend')" class="btn btn-info">
+<!--                <script
                     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                     data-key="{{ env('PUB_STRIPE_API_KEY') }}"
                     data-amount="{{ $course->price * 100 }}"
@@ -43,6 +44,7 @@
                     data-locale="auto"
                     data-zip-code="false">
                 </script>
+-->
                 {{ csrf_field() }}
             </form>
             @endif

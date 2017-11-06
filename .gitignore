@@ -8,6 +8,3 @@
 Homestead.json
 Homestead.yaml
 npm-debug.log
-.env
-.env_local
-.env_prod

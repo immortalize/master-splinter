@@ -123,7 +123,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>@lang('global.copyright') &copy; @lang('global.global_title')</p>
+<!--                    <p>@lang('global.copyright') &copy; @lang('global.global_title')</p>-->
                 </div>
             </div>
         </footer>

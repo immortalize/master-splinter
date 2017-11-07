@@ -34,10 +34,16 @@
             <div class="thumbnail">
                 <img src="uploads/{{ $course->course_image }}" alt="">
                 <div class="caption">
-                    <h4 class="pull-right">${{ $course->price }}</h4>
+                    <h4 class="pull-right">
+                        @if ($course->price==0)
+                            @lang('global.free')
+                        @else
+                            ${{ $course->price }}
+                        @endif
+                    </h4>
                     <h4><a href="{{ route('courses.show', [$course->slug]) }}">{{ $course->title }}</a>
                     </h4>
-                    <p>{{ $course->description }}</p>
+                    <p>{{ $course->description or $course->province .'/'. $course->district }}</p>
                 </div>
                 <div class="ratings">
                     <p class="pull-right">Students: {{ $course->students()->count() }}</p>

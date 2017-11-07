@@ -19,6 +19,11 @@ class Create1500441827CoursesTable extends Migration
                 $table->string('slug')->nullable();
                 $table->text('description')->nullable();
                 $table->decimal('price', 15, 2)->nullable();
+                $table->string('province',20)->nullable();
+                $table->string('district',20)->nullable();
+                $table->string('institution', 50)->nullable();
+                $table->string('location', 50)->nullable();
+                $table->string('tutor', 100)->nullable();
                 $table->string('course_image')->nullable();
                 $table->date('start_date')->nullable();
                 $table->tinyInteger('published')->nullable()->default(0);

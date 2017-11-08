@@ -1,3 +1,8 @@
+## Face to face learning management system
+Originally, forked on the project below. You can see the live project on splinter.tk (or http://master-splinter.herokuapp.com)
+
+Please use and re-use however you want, send your comments, create issues if you find any, contribute by pull requests if you can... 
+
 ## Laravel Learning Management System
 
 Simple mini-project created during live-coding sessions in 15 lessons. 
